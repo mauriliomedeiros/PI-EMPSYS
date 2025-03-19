@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center">EMPILHADEIRAS</h4>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <a style="margin-left: 10px; background-color: #333;" class="btn btn-xs btn-primary pull-right" href="{{ path('app_empilhadeira_new') }}">nova empilhadeira</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" >
+                <div class="col-md-12">
+                    <table  class="table table-condensed table-striped table-hover datatable-padrao" style="text-align: center">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1 dt-head-center">ID</th>
+                                <th class="col-md-2 dt-head-center">FABRICANTE</th>
+                                <th class="col-md-2 dt-head-center">MODELO</th>
+                                <th class="col-md-1">CARGA TOTAL</th>
+                                <th class="col-md-3">CARACTERÍSTICAS</th>
+                                <th class="col-md-2">APLICAÇÕES</th>
+                                <th class="col-md-1 dt-head-center">actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for empilhadeira in empilhadeiras %}
+                                <tr>
+                                    <td>{{ empilhadeira.id }}</td>
+                                    <td>{{ empilhadeira.fabricante }}</td>
+                                    <td>{{ empilhadeira.modelo }}</td>
+                                    <td>{{ empilhadeira.cargaTotal }} kg</td>
+                                    <td>{{ empilhadeira.caracteristicas }}</td>
+                                    <td>{{ empilhadeira.aplicacoes }}</td>
+                                    <td>
+                                        <a href="{{ path('app_empilhadeira_show', {'id': empilhadeira.id}) }}">show</a>
+                                        <a href="{{ path('app_empilhadeira_edit', {'id': empilhadeira.id}) }}">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="7">no records found</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

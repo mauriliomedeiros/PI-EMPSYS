@@ -1,0 +1,33 @@
+{{ form_start(form) }}
+
+<div class="row" style="width: 65%; margin: 0 auto;" >
+    <div class="col-md-12">
+        <fieldset>
+{#            {{ form_errors(form) }}#}
+            <div class="row">
+                <div class="form-control" style="margin-bottom: 8px;">
+                    {{ form_row(form.fabricante) }}
+                </div>
+                <div class="form-control" style="margin-bottom: 8px;">
+                    {{ form_row(form.modelo) }}
+                </div>
+                <div class="form-control" style="margin-bottom: 8px;">
+                    {{ form_row(form.cargaTotal) }}
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="form-control">
+                    {{ form_row(form.caracteristicas) }}
+                </div>
+                <div class="form-control">
+                    {{ form_row(form.aplicacoes) }}
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<button class="btn">{{ button_label|default('Save') }}</button>
+{#{{ form_row(form._token) }}#}
+{#{{ form_end(form, {'render_rest': false}) }}#}
+
+{{ form_end(form) }}
