@@ -1,25 +1,28 @@
 # PI: Sistema de monitoramento de empilhadeiras para Cristovão Empilhadeiras LTDA
-Repositório do Projeto PI da Faculdade
+## Repositório do Projeto PI da Faculdade
 
-Tecnologias que estão/serão utilizadas no desenvolvimento do projeto:
-PHP 7.4 or > 8.1
-Framework Symfony (full-installation)
-Doctrine/ORM
-Bootstrap
-MVC para a arquitetura de software
-Webpack
-Yarn
-Symfony Encore
-twig
-html
-css
-JS
-SQL
-SGBD > PostgreSQL or ...
-IDE PhpStorm from JetBrains
-WSL 2.0
-Docker
-Git/GitHub
+### Tecnologias que estão/serão utilizadas no desenvolvimento do projeto:
+#### ** Back-end **
+- PHP 7.4 or > 8.1; Framework Symfony (full-installation); Doctrine/ORM; Symfony Encore; Composer; Yarn;
+  
+#### ** Front-end **
+- Bootstrap; Webpack; Twig; HTML5; CSS; JavaScript;
+
+#### ** Banco de dados **
+- SQL
+- SGBD > PostgreSQL or ... 
+
+#### ** Arquitetura de Software **
+- MVC
+
+#### ** IDE **
+- IDE PhpStorm from JetBrains
+
+#### ** Controle de Versionamento **
+- Git; GitHub;
+
+#### ** Ambiente de Dev **
+- Windows; WSL 2.0; Debian; Docker;
 
 Configuração do ambiente para desenvolvimento do projeto:
  - git clone do repositório no GitHub; //para clonar o repositório do GitHub numa pasta local do PC\WSL\Debian\Docker.
