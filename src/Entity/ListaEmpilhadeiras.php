@@ -7,12 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ListaEmpilhadeirasRepository::class)
+ * @ORM\Table(name="empsys.lista_empilhadeiras")
  */
 class ListaEmpilhadeiras
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(type="integer")
      */
     private $id;
