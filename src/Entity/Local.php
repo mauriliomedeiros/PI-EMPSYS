@@ -25,7 +25,7 @@ class Local
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $endereÃco;
+    private $endereco;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -64,14 +64,14 @@ class Local
         return $this;
     }
 
-    public function getEndereÃco(): ?string
+    public function getEndereco(): ?string
     {
-        return $this->endereÃco;
+        return $this->endereco;
     }
 
-    public function setEndereÃco(string $endereÃco): self
+    public function setEndereco(string $endereco): self
     {
-        $this->endereÃco = $endereÃco;
+        $this->endereco = $endereco;
 
         return $this;
     }
