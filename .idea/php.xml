@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="LaravelPint">
+    <laravel_pint_settings>
+      <laravel_pint_by_interpreter asDefaultInterpreter="true" interpreter_id="6a726130-7f4f-485a-86ac-537b33f3e57f">
+        <option name="timeout" value="30000" />
+      </laravel_pint_by_interpreter>
+    </laravel_pint_settings>
+  </component>
+  <component name="MessDetector">
+    <phpmd_settings>
+      <phpmd_by_interpreter asDefaultInterpreter="true" interpreter_id="6a726130-7f4f-485a-86ac-537b33f3e57f" timeout="30000" />
+    </phpmd_settings>
+  </component>
   <component name="MessDetectorOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -9,6 +21,16 @@
   <component name="PHPCodeSnifferOptionsConfiguration">
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpCSFixer">
+    <phpcsfixer_settings>
+      <phpcs_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="6a726130-7f4f-485a-86ac-537b33f3e57f" timeout="30000" />
+    </phpcsfixer_settings>
+  </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="6a726130-7f4f-485a-86ac-537b33f3e57f" timeout="30000" />
+    </phpcs_settings>
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
@@ -140,7 +162,93 @@
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+  <component name="PhpInterpreters">
+    <interpreters>
+      <interpreter id="6a726130-7f4f-485a-86ac-537b33f3e57f" name="Debian" home="\\wsl$\Debian/usr/bin/php" auto="false" debugger_id="php.debugger.XDebug">
+        <remote_data INTERPRETER_PATH="/usr/bin/php" HELPERS_PATH="" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DISTRIBUTION_ID="Debian" />
+      </interpreter>
+    </interpreters>
+  </component>
+  <component name="PhpInterpretersPhpInfoCache">
+    <phpInfoCache>
+      <interpreter name="Debian">
+        <phpinfo binary_type="PHP" php_cli="/usr/bin/php7.4" path_separator=":" version="7.4.33">
+          <additional_php_ini>/etc/php/7.4/cli/conf.d/10-opcache.ini, /etc/php/7.4/cli/conf.d/10-pdo.ini, /etc/php/7.4/cli/conf.d/15-xml.ini, /etc/php/7.4/cli/conf.d/20-bcmath.ini, /etc/php/7.4/cli/conf.d/20-bz2.ini, /etc/php/7.4/cli/conf.d/20-calendar.ini, /etc/php/7.4/cli/conf.d/20-ctype.ini, /etc/php/7.4/cli/conf.d/20-curl.ini, /etc/php/7.4/cli/conf.d/20-dom.ini, /etc/php/7.4/cli/conf.d/20-exif.ini, /etc/php/7.4/cli/conf.d/20-ffi.ini, /etc/php/7.4/cli/conf.d/20-fileinfo.ini, /etc/php/7.4/cli/conf.d/20-ftp.ini, /etc/php/7.4/cli/conf.d/20-gd.ini, /etc/php/7.4/cli/conf.d/20-gettext.ini, /etc/php/7.4/cli/conf.d/20-iconv.ini, /etc/php/7.4/cli/conf.d/20-igbinary.ini, /etc/php/7.4/cli/conf.d/20-imagick.ini, /etc/php/7.4/cli/conf.d/20-imap.ini, /etc/php/7.4/cli/conf.d/20-intl.ini, /etc/php/7.4/cli/conf.d/20-json.ini, /etc/php/7.4/cli/conf.d/20-ldap.ini, /etc/php/7.4/cli/conf.d/20-mbstring.ini, /etc/php/7.4/cli/conf.d/20-pdo_pgsql.ini, /etc/php/7.4/cli/conf.d/20-pdo_sqlite.ini, /etc/php/7.4/cli/conf.d/20-pgsql.ini, /etc/php/7.4/cli/conf.d/20-phar.ini, /etc/php/7.4/cli/conf.d/20-posix.ini, /etc/php/7.4/cli/conf.d/20-readline.ini, /etc/php/7.4/cli/conf.d/20-shmop.ini, /etc/php/7.4/cli/conf.d/20-simplexml.ini, /etc/php/7.4/cli/conf.d/20-soap.ini, /etc/php/7.4/cli/conf.d/20-sockets.ini, /etc/php/7.4/cli/conf.d/20-sqlite3.ini, /etc/php/7.4/cli/conf.d/20-sysvmsg.ini, /etc/php/7.4/cli/conf.d/20-sysvsem.ini, /etc/php/7.4/cli/conf.d/20-sysvshm.ini, /etc/php/7.4/cli/conf.d/20-tokenizer.ini, /etc/php/7.4/cli/conf.d/20-xmlreader.ini, /etc/php/7.4/cli/conf.d/20-xmlrpc.ini, /etc/php/7.4/cli/conf.d/20-xmlwriter.ini, /etc/php/7.4/cli/conf.d/20-xsl.ini, /etc/php/7.4/cli/conf.d/20-zip.ini, /etc/php/7.4/cli/conf.d/25-redis.ini</additional_php_ini>
+          <configuration_file>/etc/php/7.4/cli/php.ini</configuration_file>
+          <configuration_options>
+            <configuration_option name="include_path" value=".:/usr/share/php" />
+          </configuration_options>
+          <debuggers />
+          <loaded_extensions>
+            <extension name="Core" />
+            <extension name="FFI" />
+            <extension name="PDO" />
+            <extension name="Phar" />
+            <extension name="Reflection" />
+            <extension name="SPL" />
+            <extension name="SimpleXML" />
+            <extension name="Zend OPcache" />
+            <extension name="bcmath" />
+            <extension name="bz2" />
+            <extension name="calendar" />
+            <extension name="ctype" />
+            <extension name="curl" />
+            <extension name="date" />
+            <extension name="dom" />
+            <extension name="exif" />
+            <extension name="fileinfo" />
+            <extension name="filter" />
+            <extension name="ftp" />
+            <extension name="gd" />
+            <extension name="gettext" />
+            <extension name="hash" />
+            <extension name="iconv" />
+            <extension name="igbinary" />
+            <extension name="imagick" />
+            <extension name="imap" />
+            <extension name="intl" />
+            <extension name="json" />
+            <extension name="ldap" />
+            <extension name="libxml" />
+            <extension name="mbstring" />
+            <extension name="openssl" />
+            <extension name="pcntl" />
+            <extension name="pcre" />
+            <extension name="pdo_pgsql" />
+            <extension name="pdo_sqlite" />
+            <extension name="pgsql" />
+            <extension name="posix" />
+            <extension name="readline" />
+            <extension name="redis" />
+            <extension name="session" />
+            <extension name="shmop" />
+            <extension name="soap" />
+            <extension name="sockets" />
+            <extension name="sodium" />
+            <extension name="sqlite3" />
+            <extension name="standard" />
+            <extension name="sysvmsg" />
+            <extension name="sysvsem" />
+            <extension name="sysvshm" />
+            <extension name="tokenizer" />
+            <extension name="xml" />
+            <extension name="xmlreader" />
+            <extension name="xmlrpc" />
+            <extension name="xmlwriter" />
+            <extension name="xsl" />
+            <extension name="zip" />
+            <extension name="zlib" />
+          </loaded_extensions>
+        </phpinfo>
+      </interpreter>
+    </phpInfoCache>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="6a726130-7f4f-485a-86ac-537b33f3e57f" timeout="60000" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -148,6 +256,11 @@
     <phpunit_settings>
       <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
     </phpunit_settings>
+  </component>
+  <component name="Psalm">
+    <Psalm_settings>
+      <psalm_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="6a726130-7f4f-485a-86ac-537b33f3e57f" timeout="60000" />
+    </Psalm_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
