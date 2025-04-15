@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ModeloEmpilhadeira{% endblock %}
+
+{% block body %}
+    <h1>Create new ModeloEmpilhadeira</h1>
+
+    {{ include('modelo_empilhadeira/_form.html.twig') }}
+
+    <a href="{{ path('modelo_empilhadeira_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ModeloEmpilhadeira index{% endblock %}
+
+{% block body %}
+    <h1>ModeloEmpilhadeira index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fabricante</th>
+                <th>Modelo</th>
+                <th>CargaTotal</th>
+                <th>Caracteristicas</th>
+                <th>Aplicacoes</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for modelo_empilhadeira in modelo_empilhadeiras %}
+            <tr>
+                <td>{{ modelo_empilhadeira.id }}</td>
+                <td>{{ modelo_empilhadeira.fabricante }}</td>
+                <td>{{ modelo_empilhadeira.modelo }}</td>
+                <td>{{ modelo_empilhadeira.cargaTotal }}</td>
+                <td>{{ modelo_empilhadeira.caracteristicas }}</td>
+                <td>{{ modelo_empilhadeira.aplicacoes }}</td>
+                <td>
+                    <a href="{{ path('modelo_empilhadeira_show', {'id': modelo_empilhadeira.id}) }}">show</a>
+                    <a href="{{ path('modelo_empilhadeira_edit', {'id': modelo_empilhadeira.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('modelo_empilhadeira_new') }}">Create new</a>
+{% endblock %}

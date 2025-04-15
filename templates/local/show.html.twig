@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Local{% endblock %}
+
+{% block body %}
+    <h1>Local</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ local.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ local.nome }}</td>
+            </tr>
+            <tr>
+                <th>Endereco</th>
+                <td>{{ local.endereco }}</td>
+            </tr>
+            <tr>
+                <th>Cidade</th>
+                <td>{{ local.cidade }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ local.estado }}</td>
+            </tr>
+            <tr>
+                <th>Cep</th>
+                <td>{{ local.cep }}</td>
+            </tr>
+            <tr>
+                <th>Observacao</th>
+                <td>{{ local.observacao }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('local_index') }}">back to list</a>
+
+    <a href="{{ path('local_edit', {'id': local.id}) }}">edit</a>
+
+    {{ include('local/_delete_form.html.twig') }}
+{% endblock %}

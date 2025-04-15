@@ -6,7 +6,7 @@ use App\Repository\ModeloEmpilhadeiraRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=EmpilhadeiraRepository::class)
+ * @ORM\Entity(repositoryClass=ModeloEmpilhadeiraRepository::class)
  * @ORM\Table(name="empsys.modelo_empilhadeira")
  */
 class ModeloEmpilhadeira

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ModeloEmpilhadeira{% endblock %}
+
+{% block body %}
+    <h1>ModeloEmpilhadeira</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ modelo_empilhadeira.id }}</td>
+            </tr>
+            <tr>
+                <th>Fabricante</th>
+                <td>{{ modelo_empilhadeira.fabricante }}</td>
+            </tr>
+            <tr>
+                <th>Modelo</th>
+                <td>{{ modelo_empilhadeira.modelo }}</td>
+            </tr>
+            <tr>
+                <th>CargaTotal</th>
+                <td>{{ modelo_empilhadeira.cargaTotal }}</td>
+            </tr>
+            <tr>
+                <th>Caracteristicas</th>
+                <td>{{ modelo_empilhadeira.caracteristicas }}</td>
+            </tr>
+            <tr>
+                <th>Aplicacoes</th>
+                <td>{{ modelo_empilhadeira.aplicacoes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('modelo_empilhadeira_index') }}">back to list</a>
+
+    <a href="{{ path('modelo_empilhadeira_edit', {'id': modelo_empilhadeira.id}) }}">edit</a>
+
+    {{ include('modelo_empilhadeira/_delete_form.html.twig') }}
+{% endblock %}
