@@ -48,6 +48,11 @@ class Local
      */
     private $observacao;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Cliente::class, inversedBy="local")
+     */
+    private $cliente;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +126,18 @@ class Local
     public function setObservacao(?string $observacao): self
     {
         $this->observacao = $observacao;
+
+        return $this;
+    }
+
+    public function getCliente(): ?Cliente
+    {
+        return $this->cliente;
+    }
+
+    public function setCliente(?Cliente $cliente): self
+    {
+        $this->cliente = $cliente;
 
         return $this;
     }

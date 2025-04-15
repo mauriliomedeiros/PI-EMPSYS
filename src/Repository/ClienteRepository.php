@@ -4,8 +4,6 @@ namespace App\Repository;
 
 use App\Entity\Cliente;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\OptimisticLockException;
-use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -24,8 +22,8 @@ class ClienteRepository extends ServiceEntityRepository
     }
 
     /**
-     * @throws ORMException
-     * @throws OptimisticLockException
+     * @param Cliente $entity
+     * @param bool $flush
      */
     public function add(Cliente $entity, bool $flush = true): void
     {
@@ -36,8 +34,8 @@ class ClienteRepository extends ServiceEntityRepository
     }
 
     /**
-     * @throws ORMException
-     * @throws OptimisticLockException
+     * @param Cliente $entity
+     * @param bool $flush
      */
     public function remove(Cliente $entity, bool $flush = true): void
     {

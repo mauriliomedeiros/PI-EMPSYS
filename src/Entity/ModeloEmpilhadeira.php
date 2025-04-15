@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\EmpilhadeiraRepository;
+use App\Repository\ModeloEmpilhadeiraRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=EmpilhadeiraRepository::class)
- * @ORM\Table(name="empsys.empilhadeira")
+ * @ORM\Table(name="empsys.modelo_empilhadeira")
  */
-class Empilhadeira
+class ModeloEmpilhadeira
 {
     /**
      * @ORM\Id

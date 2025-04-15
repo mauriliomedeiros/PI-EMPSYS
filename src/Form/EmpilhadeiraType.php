@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Empilhadeira;
+use App\Entity\ModeloEmpilhadeira;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -52,7 +52,7 @@ class EmpilhadeiraType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Empilhadeira::class,
+            'data_class' => ModeloEmpilhadeira::class,
         ]);
     }
 }

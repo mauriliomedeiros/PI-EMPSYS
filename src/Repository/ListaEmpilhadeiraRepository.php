@@ -2,32 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\ListaEmpilhadeiras;
+use App\Entity\ListaEmpilhadeira;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\OptimisticLockException;
-use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<ListaEmpilhadeiras>
+ * @extends ServiceEntityRepository<ListaEmpilhadeira>
  *
- * @method ListaEmpilhadeiras|null find($id, $lockMode = null, $lockVersion = null)
- * @method ListaEmpilhadeiras|null findOneBy(array $criteria, array $orderBy = null)
- * @method ListaEmpilhadeiras[]    findAll()
- * @method ListaEmpilhadeiras[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ListaEmpilhadeira|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ListaEmpilhadeira|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ListaEmpilhadeira[]    findAll()
+ * @method ListaEmpilhadeira[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ListaEmpilhadeirasRepository extends ServiceEntityRepository
+class ListaEmpilhadeiraRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ListaEmpilhadeiras::class);
+        parent::__construct($registry, ListaEmpilhadeira::class);
     }
 
     /**
-     * @throws ORMException
-     * @throws OptimisticLockException
+     * @param ListaEmpilhadeira $entity
+     * @param bool $flush
      */
-    public function add(ListaEmpilhadeiras $entity, bool $flush = true): void
+    public function add(ListaEmpilhadeira $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -36,10 +34,10 @@ class ListaEmpilhadeirasRepository extends ServiceEntityRepository
     }
 
     /**
-     * @throws ORMException
-     * @throws OptimisticLockException
+     * @param ListaEmpilhadeira $entity
+     * @param bool $flush
      */
-    public function remove(ListaEmpilhadeiras $entity, bool $flush = true): void
+    public function remove(ListaEmpilhadeira $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
