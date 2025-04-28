@@ -6,39 +6,11 @@
         <link rel="stylesheet" href="{{ asset('build/style.css') }}">
         {% block favicon %}<link rel="shortcut icon" href="/images/Logo_Cristovao_Empilhadeiras_LTDA.ico" />{% endblock %}
         <title>{% block title %}EMPSYS{% endblock %}</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
-        <style>
-            body {
-                display: flex;
-                min-height: 100vh;
-                margin: 0;
-            }
-            .sidebar {
-                width: 220px;
-                background-color: #2F4F6F;
-                color: white;
-                padding: 1rem;
-            }
-            .sidebar a {
-                color: #F9FAFB;
-                display: block;
-                margin: 0.5rem 0;
-                text-decoration: none;
-            }
-            .sidebar a:hover {
-                color: #60A5FA;
-            }
-            .content {
-                flex-grow: 1;
-                padding: 2rem;
-                background-color: #F5F7FA;
-            }
-        </style>
     </head>
     <body>
         {% block header %}
@@ -83,10 +55,7 @@
                     </div>
                 </div>
             </nav>
-                <!-- Scripts do Bootstrap -->
-                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
             {% endblock navbar_collapse %}
 
 
