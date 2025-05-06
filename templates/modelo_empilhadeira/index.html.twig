@@ -1,52 +1,61 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <!-- Conteúdo principal -->
-{#    <div class="content">#}
-{#        <h2>Bem-vindo ao EMPSYS</h2>#}
-{#        <p>Área principal do sistema.</p>#}
-{#    </div>#}
-    <br></br>
-    <div class="row">
-        <div class="col-md-12">
-            <h2>&nbsp; Modelos de Máquinas</h2>
-        </div>
-    </div>
-    <div class="col-md-12">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID:</th>
-                <th>Fabricante:</th>
-                <th>Modelo:</th>
-                <th>Carga Total:</th>
-                <th>Características:</th>
-                <th>Aplicações</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for modelo_empilhadeira in modelo_empilhadeiras %}
-            <tr>
-                <td>{{ modelo_empilhadeira.id }}</td>
-                <td>{{ modelo_empilhadeira.fabricante }}</td>
-                <td>{{ modelo_empilhadeira.modelo }}</td>
-                <td>{{ modelo_empilhadeira.cargaTotal }}</td>
-                <td>{{ modelo_empilhadeira.caracteristicas }}</td>
-                <td>{{ modelo_empilhadeira.aplicacoes }}</td>
-                <td>
-                    <a href="{{ path('modelo_empilhadeira_show', {'id': modelo_empilhadeira.id}) }}">show</a>
-                    <a href="{{ path('modelo_empilhadeira_edit', {'id': modelo_empilhadeira.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    </div>
+            <!-- Conteúdo principal -->
+    {#    <div class="content">#}
+    {#        <h2>Bem-vindo ao EMPSYS</h2>#}
+    {#        <p>Área principal do sistema.</p>#}
+    {#    </div>#}
+    <br>
 
-    <a href="{{ path('modelo_empilhadeira_new') }}">Create new</a>
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Modelos de Máquinas</h1>
+            <a href="{{ path('modelo_empilhadeira_new') }}">Novo modelo</a>
+        </div>
+        {#    #}
+        {#    <div class="row">#}
+        {#        <div class="col-md-12">#}
+        {#            <h2>&nbsp; Modelos de Máquinas</h2>#}
+        {#        </div>#}
+        {#    </div>#}
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID:</th>
+                        <th>Fabricante:</th>
+                        <th>Modelo:</th>
+                        <th>Carga Total:</th>
+                        <th>Características:</th>
+                        <th>Aplicações</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for modelo_empilhadeira in modelo_empilhadeiras %}
+                    <tr>
+                        <td>{{ modelo_empilhadeira.id }}</td>
+                        <td>{{ modelo_empilhadeira.fabricante }}</td>
+                        <td>{{ modelo_empilhadeira.modelo }}</td>
+                        <td>{{ modelo_empilhadeira.cargaTotal }}</td>
+                        <td>{{ modelo_empilhadeira.caracteristicas }}</td>
+                        <td>{{ modelo_empilhadeira.aplicacoes }}</td>
+                        <td>
+                            <a href="{{ path('modelo_empilhadeira_show', {'id': modelo_empilhadeira.id}) }}">show</a>
+                            <a href="{{ path('modelo_empilhadeira_edit', {'id': modelo_empilhadeira.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 {% endblock %}

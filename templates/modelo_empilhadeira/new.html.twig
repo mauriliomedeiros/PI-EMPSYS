@@ -1,9 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>Create new ModeloEmpilhadeira</h1>
+<br>
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Novo modelo</h1>
+        <a href="{{ path('modelo_empilhadeira_index') }}">Voltar</a>
+    </div>
 
     {{ include('modelo_empilhadeira/_form.html.twig') }}
 
-    <a href="{{ path('modelo_empilhadeira_index') }}">back to list</a>
+</div>
+
+
+
 {% endblock %}
