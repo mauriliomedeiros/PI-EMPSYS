@@ -7,11 +7,6 @@
       </laravel_pint_by_interpreter>
     </laravel_pint_settings>
   </component>
-  <component name="MessDetector">
-    <phpmd_settings>
-      <phpmd_by_interpreter asDefaultInterpreter="true" interpreter_id="6a726130-7f4f-485a-86ac-537b33f3e57f" timeout="30000" />
-    </phpmd_settings>
-  </component>
   <component name="MessDetectorOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -160,6 +155,24 @@
       <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/PI-Sistema_de_monitoramento_de_empilhadeiras/vendor/composer" />
+      <path value="$PROJECT_DIR$/PI-Sistema_de_monitoramento_de_empilhadeiras/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/vendor/vendor/jquery" />
+      <path value="$PROJECT_DIR$/vendor/vendor/chart.js" />
+      <path value="$PROJECT_DIR$/vendor/vendor/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/vendor/datatables" />
+      <path value="$PROJECT_DIR$/vendor/vendor/jquery-easing" />
+      <path value="$PROJECT_DIR$/vendor/vendor/fontawesome-free" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/js" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/css" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/less" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/scss" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/svgs" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/sprites" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/metadata" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/webfonts" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/scss" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
