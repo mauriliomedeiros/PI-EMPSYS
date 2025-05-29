@@ -1,34 +1,69 @@
-# PI: Sistema de monitoramento de empilhadeiras para Cristovão Empilhadeiras LTDA
-## Repositório do Projeto PI da Faculdade
+# 🚧 EMPSYS - Sistema de Monitoramento de Máquinas
 
-### Tecnologias que estão/serão utilizadas no desenvolvimento do projeto:
-#### ** Back-end **
-- PHP 7.4 or > 8.1; Framework Symfony (full-installation); Doctrine/ORM; Symfony Encore; Composer; Yarn;
-  
-#### ** Front-end **
-- Bootstrap; Webpack; Twig; HTML5; CSS; JavaScript;
+## 🎓 Repositório do Projeto PI da Faculdade
 
-#### ** Banco de dados **
-- SQL
-- SGBD > PostgreSQL or ... 
+---
 
-#### ** Arquitetura de Software **
-- MVC
+## 🛠 Tecnologias Utilizadas
 
-#### ** IDE **
-- IDE PhpStorm from JetBrains
+### 🔙 Back-end
+- ✅ PHP 7.4 com Symfony (Full Installation)
+- ✅ Symfony Encore
+- ✅ Composer
+- ✅ Yarn
 
-#### ** Controle de Versionamento **
-- Git; GitHub;
+### 🎨 Front-end
+- ✅ Bootstrap 5
+- ✅ Webpack
+- ✅ Twig
+- ✅ HTML5, CSS, JavaScript
 
-#### ** Ambiente de Dev **
-- Windows; WSL 2.0; Debian; Docker;
+### 🗄 Banco de Dados
+- ✅ SQLite
+- ✅ Doctrine ORM
 
-Configuração do ambiente para desenvolvimento do projeto:
- - git clone do repositório no GitHub; //para clonar o repositório do GitHub numa pasta local do PC\WSL\Debian\Docker.
- - composer create-project symfony/website-skeleton:"^4.4" PI-Sistema_de_monitoramento_de_empilhadeiras; //para instalar o Symfony da forma tradicional (with web application).
- - "symfony/webpack-encore-bundle": "^1.7" //adicionar o pacote no projeto (não vem com a instalação padrão do Symfony
- - yarn install; //instalar o yarn v1.22.22
- - yarn add bootstrap; //adicionar o bootstrap 5.3.3 via yarn
+### 🧱 Arquitetura
+- ✅ MVC (Model-View-Controller)
 
-Iniciar ambiente: php -S localhost:8080 -t public
+### 🧠 IDE
+- ✅ PhpStorm (JetBrains)
+
+### 🗂 Controle de Versão
+- ✅ Git & GitHub
+
+### 💻 Ambiente de Desenvolvimento
+- ✅ Windows com WSL 2.0
+- ✅ Distribuição Debian
+
+---
+
+## ⚙️ Configuração do Ambiente
+
+```bash
+# 1. Clonar o repositório
+git clone <url-do-repositório>
+
+# 2. Criar o projeto Symfony (versão 4.4)
+composer create-project symfony/website-skeleton:"^4.4" PI-Sistema_de_monitoramento_de_empilhadeiras
+
+# 3. Adicionar Webpack Encore (se necessário)
+composer require symfony/webpack-encore-bundle
+
+# 4. Instalar dependências front-end
+yarn install
+
+# 5. Adicionar Bootstrap
+yarn add bootstrap
+```
+
+---
+
+## 🚀 Executar o Servidor Local
+
+```bash
+php -S localhost:8080 -t public
+```
+
+---
+
+Desenvolvido com ❤️ para o Projeto Integrador.
