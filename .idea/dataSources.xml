@@ -5,7 +5,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:\\wsl.localhost\Debian\home\maurilio_medeiros\PI-Sistema_de_monitoramento_de_empilhadeiras\var\data.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/Documents/PI-Sistema_de_monitoramento_de_empilhadeirasvardata.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <br>
+    <div class="container col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Detalhes do Cliente</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">ID:</div>
+                    <div class="col-md-10">{{ cliente.id }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Fabricante:</div>
+                    <div class="col-md-10">{{ cliente.razaoSocial }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Modelo:</div>
+                    <div class="col-md-10">{{ cliente.nomeFantasia }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Carga Total (kg):</div>
+                    <div class="col-md-10">{{ cliente.cnpj }} kg</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Características:</div>
+                    <div class="col-md-10">{{ cliente.ativo }}</div>
+                </div>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <a href="{{ path('cliente_index') }}" class="btn btn-info">Voltar</a>
+                <a href="{{ path('cliente_edit', {'id': cliente.id}) }}" class="btn btn-warning">Editar</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

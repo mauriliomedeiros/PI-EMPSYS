@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <br>
+    <div class="container col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Detalhes do Local</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">ID:</div>
+                    <div class="col-md-10">{{ local.id }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Cliente:</div>
+                    <div class="col-md-10">{{ local.cliente.razaoSocial }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Nome:</div>
+                    <div class="col-md-10">{{ local.nome }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Endereço</div>
+                    <div class="col-md-10">{{ local.endereco }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Cidade:</div>
+                    <div class="col-md-10">{{ local.cidade }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Estado:</div>
+                    <div class="col-md-10">{{ local.estado }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">CEP:</div>
+                    <div class="col-md-10">{{ local.cep }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-2 font-weight-bold">Observação:</div>
+                    <div class="col-md-10">{{ local.observacao }}</div>
+                </div>
+            </div>
+
+            <div class="card-footer d-flex justify-content-between">
+                <a href="{{ path('local_index') }}" class="btn btn-info">Voltar</a>
+                <a href="{{ path('local_edit', {'id': local.id}) }}" class="btn btn-warning">Editar</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

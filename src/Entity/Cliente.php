@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ClienteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,6 +39,22 @@ class Cliente
      * @ORM\Column(type="boolean")
      */
     private $ativo;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Local::class, mappedBy="cliente")
+     */
+    private $local;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ListaEmpilhadeira::class, mappedBy="cliente")
+     */
+    private $empilhadeira;
+
+    public function __construct()
+    {
+        $this->local = new ArrayCollection();
+        $this->empilhadeira = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -87,6 +105,66 @@ class Cliente
     public function setAtivo(bool $ativo): self
     {
         $this->ativo = $ativo;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Local>
+     */
+    public function getLocal(): Collection
+    {
+        return $this->local;
+    }
+
+    public function addLocal(Local $local): self
+    {
+        if (!$this->local->contains($local)) {
+            $this->local[] = $local;
+            $local->setCliente($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLocal(Local $local): self
+    {
+        if ($this->local->removeElement($local)) {
+            // set the owning side to null (unless already changed)
+            if ($local->getCliente() === $this) {
+                $local->setCliente(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ListaEmpilhadeira>
+     */
+    public function getEmpilhadeira(): Collection
+    {
+        return $this->empilhadeira;
+    }
+
+    public function addEmpilhadeira(ListaEmpilhadeira $empilhadeira): self
+    {
+        if (!$this->empilhadeira->contains($empilhadeira)) {
+            $this->empilhadeira[] = $empilhadeira;
+            $empilhadeira->setCliente($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEmpilhadeira(ListaEmpilhadeira $empilhadeira): self
+    {
+        if ($this->empilhadeira->removeElement($empilhadeira)) {
+            // set the owning side to null (unless already changed)
+            if ($empilhadeira->getCliente() === $this) {
+                $empilhadeira->setCliente(null);
+            }
+        }
 
         return $this;
     }

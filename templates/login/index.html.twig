@@ -1,48 +1,114 @@
-{% extends 'base.html.twig' %}
+{#{% extends 'base.html.twig' %}#}
+{#{% block title %}EMPSYS - LOGIN{% endblock %}#}
+<title>EMPSYS - LOGIN</title>
+{% block javascripts %}
+    {{ encore_entry_link_tags('style') }}
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                                <img src="/images/EMPSYS_logo.png" alt="Logo EMPSYS" class="logo" style="height: 500px; padding: 20px">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5" style="margin-top: 60px">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Bem-vindo!</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group" style="margin-bottom: 5px">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="E-mail">
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 5px">
+                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 5px">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Lembrar</label>
+                                            </div>
+                                        </div>
+                                        <a href="{{ path('app_dashboard') }}" class="btn btn-primary btn-user btn-block">Entrar</a>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Esqueceu a senha?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="register.html">Criar uma conta!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="example-wrapper">
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+{% endblock %}
+
+
+{#{% block body %}#}
+{#<style="">#}
+
+{#    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }#}
+{#    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }#}
+{#</style>#}
+
+{#<div class="example-wrapper">#}
 {#    This friendly message is coming from:#}
 {#    <ul>#}
 {#        <li>Your controller at <code><a href="{{ '/home/maurilio_medeiros/PI-Sistema_de_monitoramento_de_empilhadeiras/src/Controller/LoginController.php'|file_link(0) }}">src/Controller/LoginController.php</a></code></li>#}
 {#        <li>Your template at <code><a href="{{ '/home/maurilio_medeiros/PI-Sistema_de_monitoramento_de_empilhadeiras/templates/login/index.html.twig'|file_link(0) }}">templates/login/index.html.twig</a></code></li>#}
 {#    </ul>#}
-</div>
-    <div class="container">
-        <div class="col-md-12" style="text-align: center; margin-top: 150px;">
+{#</div>#}
+{#    <div class="container">#}
+{#        <div class="col-md-12" style="text-align: center; margin-top: 150px;">#}
 {#            <div class="login-box">#}
 {#                <div style="margin-bottom: 10px">#}
 {#                    <img src="images/Logo_Cristovao_Empilhadeiras_LTDA.jpg" alt="Logo da Empresa" class="logo">#}
 {#                </div>#}
 
-                <div class="row">
-                    <div class="col-md-12" style="margin-bottom: 10px;">
-                        <legend><strong>LOGIN</strong></legend>
-                    </div>
-                    <form id="loginForm">
-                        <div class="col-md-12" style="margin-bottom: 10px;">
-                            <input type="text" placeholder="Usuário" required>
-                        </div>
-                        <div class="col-md-12" style="margin-bottom: 10px;">
-                            <input type="password" placeholder="Senha" required>
-                        </div>
-                        <div class="col-md-12" style="margin-bottom: 10px;">
+{#                <div class="row">#}
+{#                    <div class="col-md-12" style="margin-bottom: 10px;">#}
+{#                        <legend><strong>LOGIN</strong></legend>#}
+{#                    </div>#}
+{#                    <form id="loginForm">#}
+{#                        <div class="col-md-12" style="margin-bottom: 10px;">#}
+{#                            <input type="text" placeholder="Usuário" required>#}
+{#                        </div>#}
+{#                        <div class="col-md-12" style="margin-bottom: 10px;">#}
+{#                            <input type="password" placeholder="Senha" required>#}
+{#                        </div>#}
+{#                        <div class="col-md-12" style="margin-bottom: 10px;">#}
 {#                            <a class="btn btn-info" href="{{ path('app_dashboard') }}" >Voltar</a>#}
-                            <a class="btn btn-dark" href="{{ path('app_dashboard') }}">ENTRAR</a>
-                            <button type="submit" class="btn btn-dark">ENTRAR</button>
-                        </div>
-                        </div>
-                    </form>
-                </div>
+{#                            <a class="btn btn-dark" href="{{ path('app_dashboard') }}">ENTRAR</a>#}
+{#                            <button type="submit" class="btn btn-dark">ENTRAR</button>#}
+{#                        </div>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
 {#            </div>#}
-        </div>
-    </div>
+{#        </div>#}
+{#    </div>#}
 
 
 
-{% endblock %}
+{#{% endblock %}#}

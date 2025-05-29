@@ -7,12 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=LocalRepository::class)
+ * @ORM\Table(name="empsys.local")
  */
 class Local
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -46,6 +47,11 @@ class Local
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $observacao;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Cliente::class, inversedBy="local")
+     */
+    private $cliente;
 
     public function getId(): ?int
     {
@@ -120,6 +126,18 @@ class Local
     public function setObservacao(?string $observacao): self
     {
         $this->observacao = $observacao;
+
+        return $this;
+    }
+
+    public function getCliente(): ?Cliente
+    {
+        return $this->cliente;
+    }
+
+    public function setCliente(?Cliente $cliente): self
+    {
+        $this->cliente = $cliente;
 
         return $this;
     }
