@@ -21,7 +21,7 @@ class LocalController extends AbstractController
     public function index(LocalRepository $localRepository): Response
     {
         return $this->render('local/index.html.twig', [
-            'locals' => $localRepository->findAll(),
+            'locais' => $localRepository->findAll(),
         ]);
     }
 
