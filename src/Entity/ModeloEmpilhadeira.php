@@ -107,4 +107,10 @@ class ModeloEmpilhadeira
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->modelo ?? 'Modelo';
+    }
+
 }
