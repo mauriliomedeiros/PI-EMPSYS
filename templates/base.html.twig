@@ -25,8 +25,8 @@
 
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ path('app_dashboard') }}">
-                    <div class="sidebar-brand-icon rotate-n-15">
-                        <i class="fas fa-laugh-wink"></i>
+                    <div class="sidebar-brand-icon ">
+                        <img src="/images/EMPSYS_logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 10%;">
                     </div>
                     <div class="sidebar-brand-text mx-3">EMPSYS</div>
                 </a>
@@ -57,8 +57,8 @@
                     <div id="collapseClientes" class="collapse" aria-labelledby="headingClientes" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Opções:</h6>
-                            <a class="collapse-item" href="{{ path('lista_empilhadeira_new') }}">Adicionar</a>
-                            <a class="collapse-item" href="cards.html">Listar</a>
+                            <a class="collapse-item" href="{{ path('cliente_new') }}">Adicionar</a>
+                            <a class="collapse-item" href="{{ path('cliente_index') }}">Listar</a>
                         </div>
                     </div>
                 </li>
@@ -74,8 +74,8 @@
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Opções:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Adicionar</a>
-                            <a class="collapse-item" href="utilities-border.html">Listar</a>
+                            <a class="collapse-item" href="{{ path('local_new') }}">Adicionar</a>
+                            <a class="collapse-item" href="{{ path('local_index') }}">Listar</a>
                         </div>
                     </div>
                 </li>
@@ -91,7 +91,7 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Opções:</h6>
                             <a class="collapse-item" href="{{ path('lista_empilhadeira_new') }}">Adicionar</a>
-                            <a class="collapse-item" href="cards.html">Listar</a>
+                            <a class="collapse-item" href="{{ path('lista_empilhadeira_index') }}">Listar</a>
                             <a class="collapse-item" href="{{ path('modelo_empilhadeira_index') }}">Modelos</a>
                         </div>
                     </div>
