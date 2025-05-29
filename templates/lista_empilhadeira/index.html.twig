@@ -11,7 +11,7 @@
             </div>
             <div class="card-header d-flex justify-content-between">
                 <a href="{{ path('lista_empilhadeira_new') }}" class="btn btn-success">
-                    Novo Modelo
+                    Nova empilhadeira
                 </a>
                 <a href="{{ path('app_dashboard') }}" class="btn btn-info">
                     Voltar
@@ -22,11 +22,9 @@
                     <thead class="thead-light">
                     <tr>
                         <th style="width: 5%">ID</th>            {# col-md-1 ~ 1/12 = 8.33%, ajustei para 5% pra ser mais compacto #}
-                        <th style="width: 8%">Fabricante</th>   {# col-md-1 #}
-                        <th style="width: 10%">Modelo</th>      {# col-md-2 #}
-                        <th style="width: 8%">Carga (kg)</th> {# col-md-1 #}
-                        <th style="width: 35%">Características</th> {# col-md-4 #}
-                        <th style="width: 25%">Aplicações</th>  {# col-md-3 #}
+                        <th style="width: 8%">Modelo</th>   {# col-md-1 #}
+                        <th style="width: 15%">Cliente</th>      {# col-md-2 #}
+                        <th style="width: 15%">Local</th>      {# col-md-2 #}
                         <th style="width: 15%">Ações</th>        {# col-md-2 #}
                     </tr>
                     </thead>
@@ -35,8 +33,8 @@
                         <tr>
                             <td>{{ lista_empilhadeira.id }}</td>
                             <td>{{ lista_empilhadeira.modelo }}</td>
-                            <td>{{ lista_empilhadeira.cliente }}</td>
-                            <td>{{ lista_empilhadeira.local }}</td>
+                            <td>{{ lista_empilhadeira.cliente.razaoSocial }} - {{ lista_empilhadeira.cliente.cnpj }}</td>
+                            <td>{{ lista_empilhadeira.local.cidade }} - {{ lista_empilhadeira.local.nome }}</td>
 {#                            <td>{{ lista_empilhadeira.caracteristicas }}</td>#}
 {#                            <td>{{ lista_empilhadeira.aplicacoes }}</td>#}
                             <td>
