@@ -67,3 +67,5 @@ php -S localhost:8080 -t public
 ---
 
 Desenvolvido com ❤️ para o Projeto Integrador.
+
+7° semestre finalizado com sucesso!
