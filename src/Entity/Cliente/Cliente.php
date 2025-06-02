@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Cliente;
 
+use App\Entity\Local;
+use App\Entity\Maquina\ListaEmpilhadeira;
 use App\Repository\ClienteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;

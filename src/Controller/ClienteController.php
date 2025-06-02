@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Cliente;
+use App\Entity\Cliente\Cliente;
 use App\Form\ClienteType;
 use App\Repository\ClienteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

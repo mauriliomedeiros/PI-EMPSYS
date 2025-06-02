@@ -2,8 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\ModeloEmpilhadeira;
-use Doctrine\DBAL\Types\FloatType;
+use App\Entity\Maquina\Modelo;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -48,7 +47,7 @@ class ModeloEmpilhadeiraType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => ModeloEmpilhadeira::class,
+            'data_class' => Modelo::class,
         ]);
     }
 }

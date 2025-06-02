@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Maquina;
 
-use App\Entity\ListaEmpilhadeira;
+use App\Entity\Maquina\ListaEmpilhadeira;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

@@ -1,31 +1,31 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Maquina;
 
-use App\Entity\ModeloEmpilhadeira;
+use App\Entity\Maquina\Modelo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<ModeloEmpilhadeira>
+ * @extends ServiceEntityRepository<Modelo>
  *
- * @method ModeloEmpilhadeira|null find($id, $lockMode = null, $lockVersion = null)
- * @method ModeloEmpilhadeira|null findOneBy(array $criteria, array $orderBy = null)
- * @method ModeloEmpilhadeira[]    findAll()
- * @method ModeloEmpilhadeira[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Modelo|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Modelo|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Modelo[]    findAll()
+ * @method Modelo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ModeloEmpilhadeiraRepository extends ServiceEntityRepository
+class ModeloRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ModeloEmpilhadeira::class);
+        parent::__construct($registry, Modelo::class);
     }
 
     /**
-     * @param ModeloEmpilhadeira $entity
+     * @param Modelo $entity
      * @param bool $flush
      */
-    public function add(ModeloEmpilhadeira $entity, bool $flush = true): void
+    public function add(Modelo $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -34,10 +34,10 @@ class ModeloEmpilhadeiraRepository extends ServiceEntityRepository
     }
 
     /**
-     * @param ModeloEmpilhadeira $entity
+     * @param Modelo $entity
      * @param bool $flush
      */
-    public function remove(ModeloEmpilhadeira $entity, bool $flush = true): void
+    public function remove(Modelo $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {

@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\ListaEmpilhadeira;
+use App\Entity\Maquina\ListaEmpilhadeira;
 use App\Form\ListaEmpilhadeiraType;
-use App\Repository\ListaEmpilhadeiraRepository;
+use App\Repository\Maquina\ListaEmpilhadeiraRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

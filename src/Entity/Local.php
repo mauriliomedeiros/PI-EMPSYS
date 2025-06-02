@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Cliente\Cliente;
 use App\Repository\LocalRepository;
 use Doctrine\ORM\Mapping as ORM;
 

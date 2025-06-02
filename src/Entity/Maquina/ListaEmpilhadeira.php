@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Maquina;
 
-use App\Repository\ListaEmpilhadeiraRepository;
+use App\Entity\Cliente\Cliente;
+use App\Entity\Local;
+use App\Repository\Maquina\ListaEmpilhadeiraRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,7 +21,7 @@ class ListaEmpilhadeira
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=ModeloEmpilhadeira::class)
+     * @ORM\ManyToOne(targetEntity=Modelo::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $modelo;
@@ -40,12 +42,12 @@ class ListaEmpilhadeira
         return $this->id;
     }
 
-    public function getModelo(): ?ModeloEmpilhadeira
+    public function getModelo(): ?Modelo
     {
         return $this->modelo;
     }
 
-    public function setModelo(?ModeloEmpilhadeira $modelo): self
+    public function setModelo(?Modelo $modelo): self
     {
         $this->modelo = $modelo;
 

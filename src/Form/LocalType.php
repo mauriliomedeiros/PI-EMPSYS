@@ -2,9 +2,8 @@
 
 namespace App\Form;
 
-use App\Entity\Cliente;
+use App\Entity\Cliente\Cliente;
 use App\Entity\Local;
-use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

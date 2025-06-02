@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\Maquina;
 
-use App\Repository\ModeloEmpilhadeiraRepository;
+use App\Repository\Maquina\ModeloRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ModeloEmpilhadeiraRepository::class)
- * @ORM\Table(name="empsys.modelo_empilhadeira")
+ * @ORM\Entity(repositoryClass=ModeloRepository::class)
+ * @ORM\Table(name="empsys_maquina.modelo")
  */
-class ModeloEmpilhadeira
+class Modelo
 {
     /**
      * @ORM\Id
@@ -19,14 +19,15 @@ class ModeloEmpilhadeira
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=255)
      */
-    private $fabricante;
+    private $nome;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\ManyToOne(targetEntity=Fabricante::class)
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $modelo;
+    private $fabricante;
 
     /**
      * @ORM\Column(type="float")
@@ -43,31 +44,36 @@ class ModeloEmpilhadeira
      */
     private $aplicacoes;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $ativo;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFabricante(): ?string
+    public function getNome(): ?string
     {
-        return $this->fabricante;
+        return $this->nome;
     }
 
-    public function setFabricante(string $fabricante): self
+    public function setNome(string $nome): self
     {
-        $this->fabricante = $fabricante;
+        $this->nome = $nome;
 
         return $this;
     }
 
-    public function getModelo(): ?string
+    public function getFabricante(): ?Fabricante
     {
-        return $this->modelo;
+        return $this->fabricante;
     }
 
-    public function setModelo(string $modelo): self
+    public function setFabricante(?Fabricante $fabricante): self
     {
-        $this->modelo = $modelo;
+        $this->fabricante = $fabricante;
 
         return $this;
     }
@@ -108,9 +114,20 @@ class ModeloEmpilhadeira
         return $this;
     }
 
+    public function getAtivo(): ?bool
+    {
+        return $this->ativo;
+    }
+
+    public function setAtivo(bool $ativo): self
+    {
+        $this->ativo = $ativo;
+
+        return $this;
+    }
+
     public function __toString(): string
     {
         return $this->modelo ?? 'Modelo';
     }
-
 }

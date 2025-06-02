@@ -2,10 +2,10 @@
 
 namespace App\Form;
 
-use App\Entity\ListaEmpilhadeira;
+use App\Entity\Cliente\Cliente;
 use App\Entity\Local;
-use App\Entity\ModeloEmpilhadeira;
-use App\Entity\Cliente;
+use App\Entity\Maquina\ListaEmpilhadeira;
+use App\Entity\Maquina\Modelo;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +17,7 @@ class ListaEmpilhadeiraType extends AbstractType
     {
         $builder
             ->add('modelo', EntityType::class, [
-                'class' => ModeloEmpilhadeira::class,
+                'class' => Modelo::class,
                 'choice_label' => 'modelo',
                 'label' => 'Modelo:*',
                 'placeholder' => '---Selecione---',
