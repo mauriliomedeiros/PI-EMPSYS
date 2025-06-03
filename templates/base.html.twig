@@ -90,55 +90,29 @@
                     <div id="collapseMaquinas" class="collapse" aria-labelledby="headingMaquinas" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Opções:</h6>
+                            <a class="collapse-item" href="#">Fabricante</a>
+                            <a class="collapse-item" href="#">Modelo</a>
+                            <a class="collapse-item" href="#">Inventário</a>
                             <a class="collapse-item" href="{{ path('lista_empilhadeira_new') }}">Adicionar</a>
                             <a class="collapse-item" href="{{ path('lista_empilhadeira_index') }}">Listar</a>
                             <a class="collapse-item" href="{{ path('modelo_empilhadeira_index') }}">Modelos</a>
                         </div>
                     </div>
                 </li>
-
-{#                <!-- Divider -->#}
-{#                <hr class="sidebar-divider">#}
-
-{#                <!-- Heading -->#}
-{#                <div class="sidebar-heading">#}
-{#                    Addons#}
-{#                </div>#}
-
-{#                <!-- Nav Item - Pages Collapse Menu -->#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"#}
-{#                       aria-expanded="true" aria-controls="collapsePages">#}
-{#                        <i class="fas fa-fw fa-folder"></i>#}
-{#                        <span>Pages</span>#}
-{#                    </a>#}
-{#                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">#}
-{#                        <div class="bg-white py-2 collapse-inner rounded">#}
-{#                            <h6 class="collapse-header">Login Screens:</h6>#}
-{#                            <a class="collapse-item" href="login.html">Login</a>#}
-{#                            <a class="collapse-item" href="register.html">Register</a>#}
-{#                            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>#}
-{#                            <div class="collapse-divider"></div>#}
-{#                            <h6 class="collapse-header">Other Pages:</h6>#}
-{#                            <a class="collapse-item" href="404.html">404 Page</a>#}
-{#                            <a class="collapse-item" href="blank.html">Blank Page</a>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </li>#}
-
-{#                <!-- Nav Item - Charts -->#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link" href="charts.html">#}
-{#                        <i class="fas fa-fw fa-chart-area"></i>#}
-{#                        <span>Charts</span></a>#}
-{#                </li>#}
-
-{#                <!-- Nav Item - Tables -->#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link" href="tables.html">#}
-{#                        <i class="fas fa-fw fa-table"></i>#}
-{#                        <span>Tables</span></a>#}
-{#                </li>#}
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRelatorios"
+                       aria-expanded="true" aria-controls="collapseRelatorios">
+                        <i class="fas fa-fw fa-file"></i>
+                        <span>Relatório</span>
+                    </a>
+                    <div id="collapseRelatorios" class="collapse" aria-labelledby="headingRelatorios" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Opções:</h6>
+                            <a class="collapse-item" href="#">Novo</a>
+                            <a class="collapse-item" href="#">Visualizar</a>
+                        </div>
+                    </div>
+                </li>
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
@@ -147,6 +121,23 @@
                 <div class="text-center d-none d-md-inline">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin"
+                       aria-expanded="true" aria-controls="collapseAdmin">
+                        <i class="fas fa-fw fa-toolbox"></i>
+                        <span>Administração</span>
+                    </a>
+                    <div id="collapseAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Opções:</h6>
+                            <a class="collapse-item" href="#">Usuários</a>
+                            <a class="collapse-item" href="#">Grupos</a>
+                        </div>
+                    </div>
+                </li>
+
+
             </ul>
             <!-- End of Sidebar -->
             {#                                <a class="nav-link" href="#">Início</a>#}
