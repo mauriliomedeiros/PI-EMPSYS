@@ -11,3 +11,45 @@ CREATE INDEX IDX_58DD4C2EDE734E51 ON empsys__lista_empilhadeira (cliente_id);
 CREATE INDEX IDX_58DD4C2EC3A9576E ON empsys__lista_empilhadeira (modelo_id);
 
 select * from empsys_maquina__modelo;
+
+
+-- 28/05/2025
+-- INSERTS
+
+INSERT INTO empsys__modelo_empilhadeira (fabricante, modelo, carga_total, caracteristicas, aplicacoes) VALUES ('Hyster', 'H50FT', 5000, 'Motor diesel robusto; Transmissão automática; Sistema de controle de velocidade adaptativo; Cabine com isolamento acústico', 'Construção pesada; Logística de carga pesada; Portos e terminais');
+
+INSERT INTO empsys__modelo_empilhadeira (fabricante, modelo, carga_total, caracteristicas, aplicacoes) VALUES ('Toyota', '8FGCU25', 2500, 'Motor a gás LPG; Sistema de estabilidade automática; Ergonomia avançada com assento ajustável;
+Sistema de frenagem regenerativa.', 'Armazenagem em pátios; Manuseio de cargas paletizadas; Indústrias de médio porte');
+
+INSERT INTO empsys__modelo_empilhadeira (fabricante, modelo, carga_total, caracteristicas, aplicacoes) VALUES ('Yale', 'GDP30VX', 3000, 'Motor elétrico com bateria de alta capacidade; Direção assistida elétrica; Sistema de recuperação de energia; Display digital para monitoramento', 'Armazéns internos; Indústrias de alimentos e bebidas; Centros de distribuição');
+
+INSERT INTO empsys__modelo_empilhadeira (fabricante, modelo, carga_total, caracteristicas, aplicacoes) VALUES ('Clark', 'C30D', 3000, 'Motor diesel ou LPG (versão flex); Sistema de segurança antiqueda de carga; Suspensão ergonômica do operador; Fácil manutenção', 'Manuseio em áreas externas e internas; Indústrias químicas e metalúrgicas; Transporte de materiais pesados');
+
+INSERT INTO empsys__modelo_empilhadeira (fabricante, modelo, carga_total, caracteristicas, aplicacoes) VALUES ('Komatsu', 'FG25T-16', 2500, 'Motor a gás LPG; Transmissão hidrostática; Sistema avançado de segurança; Controle eletrônico de aceleração', 'Indústrias automotivas; Centros de logística; Manuseio de cargas médias');
+
+INSERT INTO empsys__cliente (razao_social, nome_fantasia, cnpj, ativo) VALUES ('Relâmpago McQueen', 'Relâmpago Marquinhos', '95', 1);
+
+INSERT INTO empsys__local (nome, endereco, cidade, estado, cep, observacao, cliente_id) VALUES ('Depósito do Mate', 'Radiator Springs', 'Condado Carburetor', 'Gallup', '00012351', 'Local onde o Relâmpago McQueen foi detido após destruir a cidade', 1);
+
+INSERT INTO empsys__lista_empilhadeira (modelo_id, cliente_id, local_id) VALUES (4, 1, 1);
+
+
+-- 18/06/2025
+-- implantando banco em postgresql e desativando o sqlite
+CREATE SCHEMA empsys;
+CREATE SCHEMA empsys_maquina;
+CREATE TABLE empsys.local (id SERIAL NOT NULL, cliente_id INT DEFAULT NULL, nome VARCHAR(255) NOT NULL, endereco VARCHAR(255) NOT NULL, cidade VARCHAR(255) NOT NULL, estado VARCHAR(10) NOT NULL, cep VARCHAR(15) NOT NULL, observacao VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id));
+CREATE INDEX IDX_71CE277EDE734E51 ON empsys.local (cliente_id);
+CREATE TABLE empsys.lista_empilhadeira (id SERIAL NOT NULL, modelo_id INT NOT NULL, cliente_id INT DEFAULT NULL, local_id INT NOT NULL, PRIMARY KEY(id));
+CREATE INDEX IDX_B710A23CC3A9576E ON empsys.lista_empilhadeira (modelo_id);
+CREATE INDEX IDX_B710A23CDE734E51 ON empsys.lista_empilhadeira (cliente_id);
+CREATE INDEX IDX_B710A23C5D5A2101 ON empsys.lista_empilhadeira (local_id);
+CREATE TABLE empsys_maquina.modelo (id SERIAL NOT NULL, fabricante_id INT NOT NULL, nome VARCHAR(255) NOT NULL, carga_total DOUBLE PRECISION NOT NULL, caracteristicas TEXT DEFAULT NULL, aplicacoes TEXT DEFAULT NULL, ativo BOOLEAN NOT NULL, PRIMARY KEY(id));
+CREATE INDEX IDX_E79BCBCFC0A0FDFA ON empsys_maquina.modelo (fabricante_id);
+CREATE TABLE empsys_maquina.fabricante (id SERIAL NOT NULL, nome VARCHAR(60) NOT NULL, ativo BOOLEAN NOT NULL, PRIMARY KEY(id));
+CREATE TABLE empsys.cliente (id SERIAL NOT NULL, razao_social VARCHAR(255) NOT NULL, nome_fantasia VARCHAR(255) DEFAULT NULL, cnpj VARCHAR(15) NOT NULL, ativo BOOLEAN NOT NULL, PRIMARY KEY(id));
+ALTER TABLE empsys.local ADD CONSTRAINT FK_71CE277EDE734E51 FOREIGN KEY (cliente_id) REFERENCES empsys.cliente (id) NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE empsys.lista_empilhadeira ADD CONSTRAINT FK_B710A23CC3A9576E FOREIGN KEY (modelo_id) REFERENCES empsys_maquina.modelo (id) NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE empsys.lista_empilhadeira ADD CONSTRAINT FK_B710A23CDE734E51 FOREIGN KEY (cliente_id) REFERENCES empsys.cliente (id) NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE empsys.lista_empilhadeira ADD CONSTRAINT FK_B710A23C5D5A2101 FOREIGN KEY (local_id) REFERENCES empsys.local (id) NOT DEFERRABLE INITIALLY IMMEDIATE;
+ALTER TABLE empsys_maquina.modelo ADD CONSTRAINT FK_E79BCBCFC0A0FDFA FOREIGN KEY (fabricante_id) REFERENCES empsys_maquina.fabricante (id) NOT DEFERRABLE INITIALLY IMMEDIATE;

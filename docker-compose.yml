@@ -1,0 +1,41 @@
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    networks:
+      - lan-dev-empsys
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php-fpm
+    networks:
+      - lan-dev-empsys
+
+  database-dev-empsys:
+    image: bitnami/postgresql:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - 'data-dev-empsys:/bitnami/postgresql'
+    environment:
+      - POSTGRESQL_USERNAME=maurilio
+      - POSTGRESQL_PASSWORD=10725
+      - POSTGRESQL_DATABASE=empsys_dev
+    networks:
+      - lan-dev-empsys
+
+volumes:
+  data-dev-empsys:
+
+networks:
+  lan-dev-empsys:
+    driver: bridge
